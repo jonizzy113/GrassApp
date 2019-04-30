@@ -1,181 +1,172 @@
 {
-    "employees": [
-        {
-            "id": 1,
-            "name": "Stephen",
-            "address": "100 Nathan Forest Ct",
-            "phoneNumber": "615-962-0262"
-        },
-        {
-            "id": 2,
-            "name": "Billy",
-            "address": "4493 Wilkinson Street",
-            "phoneNumber": "615-238-1652"
-        },
-        {
-            "id": 3,
-            "name": "Clif",
-            "address": "2714 Andell Road",
-            "phoneNumber": "615-775-4155"
-        },
-        {
-            "id": 4,
-            "name": "Sam",
-            "address": "1847 Frum Street",
-            "phoneNumber": "615-463-4207"
-        }
-    ],
-    "days": [
-        {
-            "id": 1,
-            "name": "Monday"
-        },
-        {
-            "id": 2,
-            "name": "Tuesday"
-        },
-        {
-            "id": 3,
-            "name": "Wednesday"
-        },
-        {
-            "id": 4,
-            "name": "Thrusday"
-        },
-        {
-            "id": 5,
-            "name": "Friday"
-        }
-    ],
-    "clients": [
-        {
-            "id": 1,
-            "name": "Jon Smith",
-            "address": "4997 Chenoweth Drive",
-            "phoneNumber": "615-278-2763",
-            "service": "mowing the lawn",
-            "dayId": 1
-        },
-        {
-            "id": 2,
-            "name": "Alex Thacker",
-            "address": "137 Hickory Heights Drive",
-            "phoneNumber": "615-268-4444",
-            "service": "mowing the lawn",
-            "dayId": 1
-        },
-        {
-            "id": 3,
-            "name": "Jameka Echols",
-            "address": "2905 Frum Street",
-            "phoneNumber": "615-936-1037",
-            "service": "mowing the lawn",
-            "dayId": 1
-        },
-        {
-            "id": 4,
-            "name": "Rose Wisotzky",
-            "address": "4276 Glory Road",
-            "phoneNumber": "615-872-3977",
-            "service": "mowing the lawn",
-            "dayId": 2
-        },
-        {
-            "id": 5,
-            "name": "Sam Britt",
-            "address": "3135 Green Street",
-            "phoneNumber": "615-365-3499",
-            "service": "mowing the lawn",
-            "dayId": 3
-        },
-        {
-            "id": 6,
-            "name": "Josh Hilbary",
-            "address": "319 Wilkinson Street",
-            "phoneNumber": "615-039-3933",
-            "service": "mowing the lawn",
-            "dayId": 4
-        },
-        {
-            "id": 7,
-            "name": "Brian Jobe",
-            "address": "67 Wilkinson Street",
-            "phoneNumber": "615-123-2321",
-            "service": "mowing the lawn",
-            "dayId": 5
-        },
-        {
-            "id": 8,
-            "name": "Chris Morgan",
-            "address": "82 Wilkinson Street",
-            "phoneNumber": "615-264-9394",
-            "service": "mowing the lawn",
-            "dayId": 2
-        },
-        {
-            "id": 9,
-            "name": "Sam Alpren",
-            "address": "1079 Frum Street",
-            "phoneNumber": "615-726-2872",
-            "service": "mowing the lawn",
-            "dayId": 3
-        },
-        {
-            "id": 10,
-            "name": "Terry Nunez",
-            "address": "4944 Chenoweth Drive",
-            "phoneNumber": "615-383-2018",
-            "service": "mowing the lawn",
-            "dayId": 4
-        },
-        {
-            "id": 11,
-            "name": "Bert Gordon",
-            "address": "4549 Buffalo Creek Road",
-            "phoneNumber": "615-928-5282",
-            "service": "mowing the lawn",
-            "dayId": 5
-        },
-        {
-            "id": 12,
-            "name": "Dianne Reed",
-            "address": "1094 Hidden Pond Road",
-            "phoneNumber": "615-662-3635",
-            "service": "mowing the lawn",
-            "dayId": 1
-        },
-        {
-            "id": 13,
-            "name": "Chris Mendoza",
-            "address": "2493 Buffalo Creek Road",
-            "phoneNumber": "615-942-7975",
-            "service": "mowing the lawn",
-            "dayId": 2
-        },
-        {
-            "id": 14,
-            "name": "Kerry Bowen",
-            "address": "2325 Frum Street",
-            "phoneNumber": "615-206-0020",
-            "service": "mowing the lawn",
-            "dayId": 3
-        },
-        {
-            "id": 15,
-            "name": "Tomas Hanson",
-            "address": "6319 Charlotte Pike",
-            "phoneNumber": "615-780-9820",
-            "service": "mowing the lawn",
-            "dayId": 4
-        },
-        {
-            "id": 16,
-            "name": "Jared Mccarthy",
-            "address": "451 Ponder Pl",
-            "phoneNumber": "874-495-0218",
-            "service": "mowing the lawn",
-            "dayId": 5
-        }
-        
-    ]
+  "employees": [
+    {
+      "id": 1,
+      "name": "Jonathan",
+      "address": "100 Nathan Forest Ct",
+      "phoneNumber": "615-962-0262"
+    },
+    {
+      "id": 2,
+      "name": "Billy",
+      "address": "4493 Wilkinson Street",
+      "phoneNumber": "615-238-1652"
+    },
+    {
+      "id": 3,
+      "name": "Clif",
+      "address": "2714 Andell Road",
+      "phoneNumber": "615-775-4155"
+    },
+    {
+      "id": 4,
+      "name": "Sam",
+      "address": "1847 Frum Street",
+      "phoneNumber": "615-463-4207"
+    }
+  ],
+  "days": [
+    {
+      "id": 1,
+      "name": "Monday"
+    },
+    {
+      "id": 2,
+      "name": "Tuesday"
+    },
+    {
+      "id": 3,
+      "name": "Wednesday"
+    },
+    {
+      "id": 4,
+      "name": "Thrusday"
+    },
+    {
+      "id": 5,
+      "name": "Friday"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "Jon Smith",
+      "address": "4997 Chenoweth Drive",
+      "phoneNumber": "615-278-2763",
+      "service": "mowing the lawn",
+      "dayId": 1
+    },
+    {
+      "id": 3,
+      "name": "Jameka Echols",
+      "address": "2905 Frum Street",
+      "phoneNumber": "615-936-1037",
+      "service": "mowing the lawn",
+      "dayId": 1
+    },
+    {
+      "id": 4,
+      "name": "Rose Wisotzky",
+      "address": "4276 Glory Road",
+      "phoneNumber": "615-872-3977",
+      "service": "mowing the lawn",
+      "dayId": 2
+    },
+    {
+      "id": 5,
+      "name": "Sam Britt",
+      "address": "3135 Green Street",
+      "phoneNumber": "615-365-3499",
+      "service": "mowing the lawn",
+      "dayId": 3
+    },
+    {
+      "id": 6,
+      "name": "Josh Hilbary",
+      "address": "319 Wilkinson Street",
+      "phoneNumber": "615-039-3933",
+      "service": "mowing the lawn",
+      "dayId": 4
+    },
+    {
+      "id": 7,
+      "name": "Brian Jobe",
+      "address": "67 Wilkinson Street",
+      "phoneNumber": "615-123-2321",
+      "service": "mowing the lawn",
+      "dayId": 5
+    },
+    {
+      "id": 8,
+      "name": "Chris Morgan",
+      "address": "82 Wilkinson Street",
+      "phoneNumber": "615-264-9394",
+      "service": "mowing the lawn",
+      "dayId": 2
+    },
+    {
+      "id": 9,
+      "name": "Sam Alpren",
+      "address": "1079 Frum Street",
+      "phoneNumber": "615-726-2872",
+      "service": "mowing the lawn",
+      "dayId": 3
+    },
+    {
+      "id": 10,
+      "name": "Terry Nunez",
+      "address": "4944 Chenoweth Drive",
+      "phoneNumber": "615-383-2018",
+      "service": "mowing the lawn",
+      "dayId": 4
+    },
+    {
+      "id": 11,
+      "name": "Bert Gordon",
+      "address": "4549 Buffalo Creek Road",
+      "phoneNumber": "615-928-5282",
+      "service": "mowing the lawn",
+      "dayId": 5
+    },
+    {
+      "id": 12,
+      "name": "Dianne Reed",
+      "address": "1094 Hidden Pond Road",
+      "phoneNumber": "615-662-3635",
+      "service": "mowing the lawn",
+      "dayId": 1
+    },
+    {
+      "id": 13,
+      "name": "Chris Mendoza",
+      "address": "2493 Buffalo Creek Road",
+      "phoneNumber": "615-942-7975",
+      "service": "mowing the lawn",
+      "dayId": 2
+    },
+    {
+      "id": 14,
+      "name": "Kerry Bowen",
+      "address": "2325 Frum Street",
+      "phoneNumber": "615-206-0020",
+      "service": "mowing the lawn",
+      "dayId": 3
+    },
+    {
+      "id": 15,
+      "name": "Tomas Hanson",
+      "address": "6319 Charlotte Pike",
+      "phoneNumber": "615-780-9820",
+      "service": "mowing the lawn",
+      "dayId": 4
+    },
+    {
+      "id": 16,
+      "name": "Jared Mccarthy",
+      "address": "451 Ponder Pl",
+      "phoneNumber": "874-495-0218",
+      "service": "mowing the lawn",
+      "dayId": 5
+    }
+  ]
 }

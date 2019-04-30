@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 export default class ClientList extends Component {
+
     render() {
         return (
             <React.Fragment>
@@ -23,6 +24,14 @@ export default class ClientList extends Component {
                                 <div className="card-body">
                                     <h4 className="card-title">{client.name}</h4>
                                     <div>{client.address}</div>
+                                    <button
+                                            onClick={() => this.props.deleteClient(client.id)}
+                                            className="card-link btn btn-danger">Delete</button>
+                                    <button
+                                            onClick={() => {
+                                                this.props.history.push(`/clients/${client.id}/edit`)
+                                            }}
+                                            className="card-link btn btn-info">Edit</button>
                                 </div>
                             </div>
                         )
