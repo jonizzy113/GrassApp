@@ -9,7 +9,7 @@ export default class NavBar extends Component {
             <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
                 <ul className="nav nav-pills">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">Home</Link>
+                        <Link className="nav-link" to="/">Welcome</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/employees">Employees</Link>
@@ -19,6 +19,12 @@ export default class NavBar extends Component {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/schedule">Schedule</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link 
+                        onClick={() => sessionStorage.clear()} className="nav-link" to="/">
+                        Logout
+                        </Link>
                     </li>
                 </ul>
             </nav>
