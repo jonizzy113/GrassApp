@@ -5,6 +5,10 @@ import ClientList from './clients/ClientList'
 import ClientForm from "./clients/ClientForm"
 import ClientEditForm from "./clients/ClientEditForm"
 import DaysManager from "./days/DaysManager"
+import EmployeeList from "./employees/EmployeeList"
+import EmployeeForm from "./employees/EmployeeForm"
+import EmployeeManager from "./employees/EmployeeManager"
+import EmployeeEditForm from './employees/EmployeeEditForm';
 // import {withRouter} from "react-router",
 
 
@@ -22,6 +26,8 @@ export default class ApplicationViews extends Component {
             .then(clients => newState.clients = clients)
         DaysManager.getAll()
             .then(days => newState.days = days)
+        EmployeeManager.getAll()
+            .then(employees => newState.employees = employees)
             .then(() => this.setState(newState))
     }
 
@@ -49,6 +55,31 @@ export default class ApplicationViews extends Component {
         })
     })
     }
+    addEmployee = employee =>
+        EmployeeManager.post(employee)
+            .then(() => EmployeeManager.getAll())
+            .then(employees =>
+                this.setState({
+                    employees: employees
+                })
+            );
+
+    deleteEmployee = id => 
+        EmployeeManager.delete(id)
+            .then(() => EmployeeManager.getAll())
+            .then(employees => {
+                this.setState({ employees: employees })
+            })
+
+            updateEmployee = (editiedEmployee) =>  {
+                return EmployeeManager.put(editiedEmployee)
+                .then(() => EmployeeManager.getAll())
+                .then(employees => {
+                    this.setState({
+                        employees: employees
+                    })
+                })
+                }
 
     render() {
         return (
@@ -66,6 +97,20 @@ export default class ApplicationViews extends Component {
                 <Route
                     path="/clients/:clientId(\d+)/edit" render={props => {
                         return <ClientEditForm {...props} days={this.state.days} updateClient={this.updateClient} />
+                    }}
+                />
+                <Route exact path="/employees" render={(props) => {
+                    return <EmployeeList employees={this.state.employees}
+                        {...props} deleteEmployee={this.deleteEmployee} />
+                }} />
+                <Route path="/employees/new" render={(props) => {
+                    return <EmployeeForm {...props}
+                        addEmployee={this.addEmployee}
+                        days={this.state.days} />
+                }} />
+                <Route
+                    path="/employees/:employeeId(\d+)/edit" render={props => {
+                        return <EmployeeEditForm {...props}  updateEmployee={this.updateEmployee} />
                     }}
                 />
             </React.Fragment>
