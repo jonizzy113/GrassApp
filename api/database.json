@@ -1,4 +1,12 @@
 {
+
+  "users": [
+    {
+      "id":1,
+      "userName": "Jon",
+      "password": "jon"
+    }
+  ],
   "employees": [
     {
       "id": 1,
