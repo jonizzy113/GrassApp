@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import UserManager from "../users/UserManager"
+import UserManager from "../user/UserManager"
 
 
 export default class Login extends Component {
@@ -24,10 +24,10 @@ export default class Login extends Component {
             if (tempUserName) {
                 sessionStorage.setItem("userId", tempUserName.id)
                 this.props.onLogin()
-                this.props.history.push("/tasks") 
+                this.props.history.push("/clients") 
             } else {
                 window.alert("Not Found!")
-        }}).then(() => this.props.userSpecificData())
+        }}).then(() => this.props.userData())
 
     }
 
