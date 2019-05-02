@@ -54,11 +54,6 @@ export default class Login extends Component {
                 onClick={() => this.handleLogin}>
                     Sign in
                 </button>
-                <button type="Register"
-                onClick={() => {
-                                this.props.history.push("/login/new")
-                            }}>
-                Register</button>
             </form>
             </React.Fragment>
         )
