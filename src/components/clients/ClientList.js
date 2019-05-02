@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './client.css'
 // import { Link } from "react-router-dom";
 
 
@@ -7,7 +8,7 @@ export default class ClientList extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="clientBtutton">
+                <div className="clientButton">
                     <button type="button"
                         className="btn btn-success"
                         onClick={() => {

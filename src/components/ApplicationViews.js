@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from "react"
 // import UserManager from "./user/UserManager"
 import ClientsManager from "./clients/ClientsManager"
@@ -13,10 +13,13 @@ import EmployeeEditForm from './employees/EmployeeEditForm';
 import ScheduleManager from "./schedule/ScheduleManager"
 import ScheduleList from "./schedule/ScheduleList"
 import Login from "./login/Login"
-// import {withRouter} from "react-router",
+import {withRouter} from "react-router"
 
 
-export default class ApplicationViews extends Component {
+class ApplicationViews extends Component {
+
+    isAuthenticated = () => sessionStorage.getItem("userId") !== null
+
     state = {
         employees: [],
         clients: [],
@@ -66,7 +69,7 @@ export default class ApplicationViews extends Component {
 
     updateClient = (editiedClient) => {
         return ClientsManager.put(editiedClient)
-            .then(() => ClientsManager.getAll())
+            .then(() => ScheduleManager.getAll())
             .then(clients => {
                 this.setState({
                     clients: clients
@@ -113,9 +116,13 @@ export default class ApplicationViews extends Component {
                     }}
                 />
                 <Route exact path="/clients" render={(props) => {
+                    if(this.isAuthenticated()) {
                     return <ClientList clients={this.state.clients}
                         deleteClient={this.deleteClient}
                         {...props} />
+                    } else {
+                        return <Redirect to="/" />
+                    }
                 }} />
                 <Route path="/clients/new" render={(props) => {
                     return <ClientForm {...props}
@@ -128,8 +135,12 @@ export default class ApplicationViews extends Component {
                     }}
                 />
                 <Route exact path="/employees" render={(props) => {
+                    if(this.isAuthenticated()) {
                     return <EmployeeList employees={this.state.employees}
-                        {...props} deleteEmployee={this.deleteEmployee} />
+                    {...props} deleteEmployee={this.deleteEmployee} />
+                    } else {
+                        return <Redirect to="/" />
+                    }
                 }} />
                 <Route path="/employees/new" render={(props) => {
                     return <EmployeeForm {...props}
@@ -142,11 +153,16 @@ export default class ApplicationViews extends Component {
                     }}
                 />
                 <Route exact path="/schedule" render={(props) => {
+                    if(this.isAuthenticated()) {
                     return <ScheduleList clients={this.state.clients}
                     days={this.state.days}
                         {...props} />
+                    } else {
+                        return <Redirect to="/" />
+                    }
                 }} />
             </React.Fragment>
         )
     }
 }
+export default withRouter(ApplicationViews)

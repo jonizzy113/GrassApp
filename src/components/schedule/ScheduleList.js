@@ -4,6 +4,7 @@ import './schedule.css'
 
 
 
+
 export default class ScheduleList extends Component {
 
     state = {
@@ -28,7 +29,7 @@ export default class ScheduleList extends Component {
         
         return (
             <article className="article">
-                <section className="card jumbotron text-center">Monday
+                <section className="card scheduleCard jumbotron text-center">Monday
                 {
                     mondayData.map(client =>
                         <div key={client.id} className="">
@@ -40,7 +41,7 @@ export default class ScheduleList extends Component {
                 )
                 }
                 </section>
-                <section className="card jumbotron text-center">Tuesday
+                <section className="card scheduleCard jumbotron text-center">Tuesday
                 {
                     tuesdayData.map(client =>
                         <div key={client.id} className="tuesdayCard">
@@ -52,7 +53,7 @@ export default class ScheduleList extends Component {
                 )
                 }
                 </section>
-                <section className="card jumbotron text-center">Wednesday
+                <section className="card scheduleCard jumbotron text-center">Wednesday
                 {
                     wednesdayData.map(client =>
                         <div key={client.id} className="wednesdayCard">
@@ -64,7 +65,7 @@ export default class ScheduleList extends Component {
                 )
                 }
                 </section>
-                <section className="card jumbotron text-center">Thrusday
+                <section className="card scheduleCard jumbotron text-center">Thrusday
                 {
                     thursdayData.map(client =>
                         <div key={client.id} className="thrusdayCard">
@@ -76,7 +77,7 @@ export default class ScheduleList extends Component {
                 )
                 }
                 </section>
-                <section className="card jumbotron text-center">Friday
+                <section className="card scheduleCard jumbotron text-center">Friday
                 {
                     fridayData.map(client =>
                         <div key={client.id} className="fridayCard">
