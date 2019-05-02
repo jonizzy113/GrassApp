@@ -1,6 +1,6 @@
 import { Route } from 'react-router-dom'
 import React, { Component } from "react"
-import UserManager from "./user/UserManager"
+// import UserManager from "./user/UserManager"
 import ClientsManager from "./clients/ClientsManager"
 import ClientList from './clients/ClientList'
 import ClientForm from "./clients/ClientForm"
@@ -10,6 +10,8 @@ import EmployeeList from "./employees/EmployeeList"
 import EmployeeForm from "./employees/EmployeeForm"
 import EmployeeManager from "./employees/EmployeeManager"
 import EmployeeEditForm from './employees/EmployeeEditForm';
+import ScheduleManager from "./schedule/ScheduleManager"
+import ScheduleList from "./schedule/ScheduleList"
 import Login from "./login/Login"
 // import {withRouter} from "react-router",
 
@@ -29,12 +31,14 @@ export default class ApplicationViews extends Component {
         const newState = {}
 
         ClientsManager.getAll()
-            .then(clients => newState.clients = clients)
-        DaysManager.getAll()
-            .then(days => newState.days = days)
-        EmployeeManager.getAll()
-            .then(employees => newState.employees = employees)
-            .then(() => this.setState(newState))
+        .then(clients => newState.clients = clients)
+        .then(() =>DaysManager.getAll())
+        .then(days => newState.days = days)
+        .then(() =>EmployeeManager.getAll())
+        .then(employees => newState.employees = employees)
+        .then(() =>ScheduleManager.getAll())
+        .then(clients => newState.clients = clients)
+        .then(() => this.setState(newState))
     }
     onLogin = () => {
         this.userData()
@@ -47,7 +51,7 @@ export default class ApplicationViews extends Component {
 
     addClient = client =>
         ClientsManager.post(client)
-            .then(() => ClientsManager.getAll())
+            .then(() => ScheduleManager.getAll())
             .then(clients =>
                 this.setState({
                     clients: clients
@@ -55,7 +59,7 @@ export default class ApplicationViews extends Component {
             );
 
     deleteClient = id => ClientsManager.delete(id)
-        .then(() => ClientsManager.getAll())
+        .then(() => ScheduleManager.getAll())
         .then(clients => {
             this.setState({ clients: clients })
         })
@@ -137,6 +141,11 @@ export default class ApplicationViews extends Component {
                         return <EmployeeEditForm {...props} updateEmployee={this.updateEmployee} />
                     }}
                 />
+                <Route exact path="/schedule" render={(props) => {
+                    return <ScheduleList clients={this.state.clients}
+                    days={this.state.days}
+                        {...props} />
+                }} />
             </React.Fragment>
         )
     }
