@@ -3,6 +3,7 @@ import ClientsManager from "./ClientsManager"
 
 
 export default class ClientEditForm extends Component {
+    // setting state 
     state = {
         name: "",
         address: "",
@@ -10,14 +11,15 @@ export default class ClientEditForm extends Component {
         service: "",
         dayId: ""
     }
-
+        // handleFieldChange update state when the input field is editied
     handleFieldChange = (event) => {
         const stateToChange = {};
         stateToChange[event.target.id] = event.target.value;
         console.log(stateToChange)
         this.setState(stateToChange);
     };
-
+        // updateExistingClient constructs the opbject with ediited infromation and fires the approiate
+        // functions to update existing client
     updateExistingClient = event => {
         event.preventDefault();
         if (this.state.dayId === "") {
@@ -31,10 +33,11 @@ export default class ClientEditForm extends Component {
                 service: this.state.service,
                 dayId: Number(this.state.dayId)
             }
+            // once updateClient is finshed redirect back to the clients list
             this.props.updateClient(editiedClient).then(() => this.props.history.push("/clients"))
         }
     }
-
+        // responsible for prefilling the edit form with the information in the database matching the correct client
     componentDidMount() {
             ClientsManager.get(this.props.match.params.clientId)
             .then(client => {
@@ -48,13 +51,13 @@ export default class ClientEditForm extends Component {
                 
             })
     }
-
+            //  rendering the edit form with the prefilled val
     render() {
         console.log(this.props.match.params.clientId)
         return (
             <React.Fragment>
                 <form className="clientForm">
-                    <div className="form-group">
+                    <div className="fouesrm-group">
                         <label htmlFor="name">Client Name</label>
                         <input
                             type="text"

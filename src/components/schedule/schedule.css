@@ -2,9 +2,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    background-image: url("grass.jpeg");
-    background-size: 100% 100%;
 } 
 .scheduleCard {
-    background-color:rgba(179, 179, 179, .7);
+    background-color: rgba(242, 242, 242, .7);
+}
+body {
+    background-image: url("grass1.jpg");
+    background-size: cover;
 }

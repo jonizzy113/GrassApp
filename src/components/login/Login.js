@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import UserManager from "../user/UserManager"
+import './login.css'
 
 
 export default class Login extends Component {
@@ -34,6 +35,7 @@ export default class Login extends Component {
     render() {
         return (
             <React.Fragment>
+            <h2 className="content welcome">Welcome to GrassApp</h2>
             <form onSubmit={this.handleLogin} className="content">
                 <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
                 <label htmlFor="userName">

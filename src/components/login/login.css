@@ -1,0 +1,7 @@
+.content {
+    color: aliceblue;
+}
+.welcome {
+    display: flex;
+    justify-content: center
+}
