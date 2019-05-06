@@ -16,8 +16,8 @@ import {withRouter} from "react-router"
 
 
 class ApplicationViews extends Component {
-    // isAuthenticated checks to see if there is userId in session storage
-    isAuthenticated = () => sessionStorage.getItem("userId") !== null
+    // isAuthenticated checks to see if there is employeeId in session storage
+    isAuthenticated = () => sessionStorage.getItem("employeeId") !== null
         // setting state
     state = {
         employees: [],
@@ -112,8 +112,8 @@ class ApplicationViews extends Component {
             })
     }
         // renders the path to Employees, clients, and the schedule
-        // also uses isAuthenticated to make sure there is an userId in seesion storage
-        // if no userId in session Storage redirect to login page
+        // also uses isAuthenticated to make sure there is an employeeId in seesion storage
+        // if no employeeId in session Storage redirect to login page
     render() {
         return (
             <React.Fragment>

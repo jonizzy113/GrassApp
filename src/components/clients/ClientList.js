@@ -12,7 +12,7 @@ export default class ClientList extends Component {
             <React.Fragment>
                 <div className="clientButton">
                     <button type="button"
-                        className="btn btn-success"
+                        className="btn btn-success  btn-block"
                         onClick={() => {
                             this.props.history.push("/clients/new")
                         }
@@ -27,6 +27,7 @@ export default class ClientList extends Component {
                                 <div className="card-body">
                                     <h4 className="card-title">{client.name}</h4>
                                     <div>{client.address}</div>
+                                    <div>{client.phoneNumber}</div>
                                     <div>{client.service}</div>
                                     <div>{client.day.name}</div>
                                     <button

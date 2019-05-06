@@ -4,17 +4,21 @@ import './login.css'
 
 
 export default class Login extends Component {
-
+        // setting intial state
     state = {
         userName: "",
         password: ""
     }
-
+        //  handleFieldChange update state when the input field is editied
     handleFieldChange = (evt) => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
+
+    // handleLogin gets all users takes that and checks to see if it matches
+    // if it does match it sets session storage then calls onLogin which gets all data
+    // then got to the clients page
     handleLogin = (e) => {
         e.preventDefault()
         UserManager.getAll()
@@ -23,7 +27,7 @@ export default class Login extends Component {
             this.state.userName.toLowerCase() && element.password.toLowerCase() ===
             this.state.password.toLowerCase())
             if (tempUserName) {
-                sessionStorage.setItem("userId", tempUserName.id)
+                sessionStorage.setItem("employeeId", tempUserName.id)
                 this.props.onLogin()
                 this.props.history.push("/clients") 
             } else {
@@ -31,7 +35,7 @@ export default class Login extends Component {
         }}).then(() => this.props.userData())
 
     }
-
+        // renders the login form 
     render() {
         return (
             <React.Fragment>

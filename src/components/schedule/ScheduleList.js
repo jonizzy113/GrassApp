@@ -6,7 +6,7 @@ import './schedule.css'
 
 
 export default class ScheduleList extends Component {
-
+        // sets intial state
     state = {
         mondayData: [],
         tuesdayData: [],
@@ -14,13 +14,15 @@ export default class ScheduleList extends Component {
         thursdayData: [],
         fridayData:[]
     }
+
+    // gets all the clients information from the database
         componentDidMount() {
             const newState = {}
             ScheduleManager.getAll().then(clients => newState.clients = clients).then(() => this.setState(newState))
         }
     
+        // renders the client list filtered by the day of the week they are recieving services
     render() {
-        console.log(this.props)
         let mondayData = this.props.clients.filter(client => client.day.name === "Monday")
         let tuesdayData = this.props.clients.filter(client => client.day.name === "Tuesday")
         let wednesdayData = this.props.clients.filter(client => client.day.name === "Wednesday")

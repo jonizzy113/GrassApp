@@ -11,7 +11,7 @@ export default class EmployeeList extends Component {
             <React.Fragment>
                 <div className="employeeButton">
                     <button type="button"
-                        className="btn btn-success"
+                        className="btn btn-success  btn-block"
                         onClick={() => {
                             this.props.history.push("/employees/new")
                         }
