@@ -111,7 +111,9 @@ class ApplicationViews extends Component {
                 })
             })
     }
-
+        // renders the path to Employees, clients, and the schedule
+        // also uses isAuthenticated to make sure there is an userId in seesion storage
+        // if no userId in session Storage redirect to login page
     render() {
         return (
             <React.Fragment>

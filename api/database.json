@@ -2,8 +2,9 @@
   "users": [
     {
       "id": 1,
-      "userName": "Jon",
-      "password": "jon"
+      "userName": "Jonathan",
+      "password": "jon",
+      "employeeId": 1
     }
   ],
   "employees": [
