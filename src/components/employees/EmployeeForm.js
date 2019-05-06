@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
+import './employee.css'
 
 export default class EmployeeForm extends Component {
+    // setting state
     state = {
         name: "",
         address: "",
         phoneNumber: ""
     }
-
+        //  handleFieldChange update state when the input field is editied
     handleFieldChange = (event) => {
         const stateToChange = {};
         stateToChange[event.target.id] = event.target.value;
         console.log(stateToChange)
         this.setState(stateToChange);
     };
-
+        // constructNewEmployee constructs the object and fires off the funtion to add to the database
     constructNewEmployee = event => {
         event.preventDefault();
         const employee = {
@@ -21,13 +23,14 @@ export default class EmployeeForm extends Component {
             address: this.state.address,
             phoneNumber: this.state.phoneNumber
         }
+                // redirects back to employees after object created after addEmployee is complete
         this.props.addEmployee(employee).then(() => this.props.history.push("/employees"))
     }
-
+            // rendering the form to create the new employee
     render() {
         return (
             <React.Fragment>
-                <form>
+                <form className="employeeForm">
                     <div className="form-group">
                     <label htmlFor="name">Employee Name</label>
                     <input

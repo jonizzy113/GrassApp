@@ -1,6 +1,5 @@
 import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from "react"
-// import UserManager from "./user/UserManager"
 import ClientsManager from "./clients/ClientsManager"
 import ClientList from './clients/ClientList'
 import ClientForm from "./clients/ClientForm"
@@ -17,15 +16,15 @@ import {withRouter} from "react-router"
 
 
 class ApplicationViews extends Component {
-
-    isAuthenticated = () => sessionStorage.getItem("userId") !== null
-
+    // isAuthenticated checks to see if there is employeeId in session storage
+    isAuthenticated = () => sessionStorage.getItem("employeeId") !== null
+        // setting state
     state = {
         employees: [],
         clients: [],
         days: []
     }
-
+        // getting all information
     componentDidMount() {
         this.userData()
     }
@@ -43,15 +42,17 @@ class ApplicationViews extends Component {
         .then(clients => newState.clients = clients)
         .then(() => this.setState(newState))
     }
+    // once you login it calls userData which gets all the information for the User
     onLogin = () => {
         this.userData()
     }
-    
+    //  just clears session storage when the logout button is clicked
     onLogout = () => {
         sessionStorage.clear()
     }
 
-
+        // addClient post the information from the form to the clients database then does another getAll
+        // which gets all the clients including the new one added. Then sets state and displays
     addClient = client =>
         ClientsManager.post(client)
             .then(() => ScheduleManager.getAll())
@@ -60,13 +61,15 @@ class ApplicationViews extends Component {
                     clients: clients
                 })
             );
-
+                    //  deleteClient takes the id of the client and removes it from the database 
+                    // then does a get call to get all the clients then sets state with the client you deleted not showing
     deleteClient = id => ClientsManager.delete(id)
         .then(() => ScheduleManager.getAll())
         .then(clients => {
             this.setState({ clients: clients })
         })
-
+            // updateClient takes the id of the client you edit then saves the new information to the database
+            // does another get call then sets state with the new information
     updateClient = (editiedClient) => {
         return ClientsManager.put(editiedClient)
             .then(() => ScheduleManager.getAll())
@@ -76,6 +79,9 @@ class ApplicationViews extends Component {
                 })
             })
     }
+
+    // // addEmployee post the information from the form to the employees database then does another getAll
+        // which gets all the employees including the new one added. Then sets state and displays
     addEmployee = employee =>
         EmployeeManager.post(employee)
             .then(() => EmployeeManager.getAll())
@@ -85,6 +91,8 @@ class ApplicationViews extends Component {
                 })
             );
 
+            //  deleteEmployee takes the id of the employee and removes it from the database 
+                    // then does a get call to get all the employees then sets state with the employee you deleted not showing
     deleteEmployee = id =>
         EmployeeManager.delete(id)
             .then(() => EmployeeManager.getAll())
@@ -92,6 +100,8 @@ class ApplicationViews extends Component {
                 this.setState({ employees: employees })
             })
 
+            // updateEmployee takes the id of the employee you edit then saves the new information to the database
+            // does another get call then sets state with the new information
     updateEmployee = (editiedEmployee) => {
         return EmployeeManager.put(editiedEmployee)
             .then(() => EmployeeManager.getAll())
@@ -101,7 +111,9 @@ class ApplicationViews extends Component {
                 })
             })
     }
-
+        // renders the path to Employees, clients, and the schedule
+        // also uses isAuthenticated to make sure there is an employeeId in seesion storage
+        // if no employeeId in session Storage redirect to login page
     render() {
         return (
             <React.Fragment>
@@ -118,7 +130,7 @@ class ApplicationViews extends Component {
                 <Route exact path="/clients" render={(props) => {
                     if(this.isAuthenticated()) {
                     return <ClientList clients={this.state.clients}
-                        deleteClient={this.deleteClient}
+                        deleteClient={this.deleteClient} days={this.state.days}
                         {...props} />
                     } else {
                         return <Redirect to="/" />

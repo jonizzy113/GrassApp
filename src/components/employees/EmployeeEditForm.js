@@ -1,22 +1,25 @@
 import React, { Component } from 'react'
 import EmployeeManager from "./EmployeeManager"
+import './employee.css'
 
 
 export default class EmployeeEditForm extends Component {
+    // setting state 
     state = {
         name: "",
         address: "",
         phoneNumber: ""
     }
 
-
+        // handleFieldChange update state when the input field is editied
     handleFieldChange = (event) => {
         const stateToChange = {};
         stateToChange[event.target.id] = event.target.value;
         console.log(stateToChange)
         this.setState(stateToChange);
     };
-
+        // updateExistingEmployee constructs the opbject with ediited infromation and fires the approiate
+        // functions to update existing employee
     updateExistingEmployee = event => {
         event.preventDefault();
             const editiedEmployee = {
@@ -25,9 +28,10 @@ export default class EmployeeEditForm extends Component {
                 address: this.state.address,
                 phoneNumber: this.state.phoneNumber
             }
+            // once updateEmployee finishes then redirects back to employees
             this.props.updateEmployee(editiedEmployee).then(() => this.props.history.push("/employees"))
         }
-
+            // grabs the employee information matching the id 
         componentDidMount() {
             EmployeeManager.get(this.props.match.params.employeeId)
             .then(client => {
@@ -39,13 +43,13 @@ export default class EmployeeEditForm extends Component {
                 
             })
     }
-
+            // renders the edit form with the prefilled information as the values
     render() {
         return (
             <React.Fragment>
                 <form className="employeeForm">
                 <div className="form-group">
-                        <label htmlFor="name">Employee Name</label>
+                        <label htmlFor="name">Employee Name: </label>
                         <input
                             type="text"
                             required
@@ -56,7 +60,7 @@ export default class EmployeeEditForm extends Component {
                         />
                     </div>
                     <div className="form-grup">
-                        <label htmlFor="address">Employee Address</label>
+                        <label htmlFor="address">Employee Address: </label>
                         <input
                             type="text"
                             required
@@ -67,7 +71,7 @@ export default class EmployeeEditForm extends Component {
                         />
                     </div>
                     <div className="form-grup">
-                        <label htmlFor="phoneNumber">Employee Phone Number</label>
+                        <label htmlFor="phoneNumber">Employee Phone Number: </label>
                         <input
                             type="text"
                             required

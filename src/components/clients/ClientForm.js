@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import './client.css'
 
 
 export default class ClientForm extends Component {
+    // setting state for imformation going to be used for the form
     state = {
         name: "",
         address: "",
@@ -9,14 +11,14 @@ export default class ClientForm extends Component {
         service: "",
         dayId: ""
     }
-
+        //  handleFieldChange update state when the input field is editied
     handleFieldChange = (event) => {
         const stateToChange = {};
         stateToChange[event.target.id] = event.target.value;
         console.log(stateToChange)
         this.setState(stateToChange);
     };
-
+        // createNewClient constructs the object and fires off the funtion to add to the database
     createNewClient = event => {
         event.preventDefault();
         if (this.state.dayId === "") {
@@ -29,16 +31,17 @@ export default class ClientForm extends Component {
                 service: this.state.service,
                 dayId: Number(this.state.dayId)
             }
+            // redirects back to clients after object created after addClient is complete
             this.props.addClient(client).then(() => this.props.history.push("/clients"))
         }
     }
-
+        // rendering the form to create the new client
     render() {
         return (
             <React.Fragment>
                 <form className="clientForm">
                     <div className="form-group">
-                        <label htmlFor="name">Client Name</label>
+                        <label htmlFor="name">Client Name: </label>
                         <input
                             type="text"
                             required
@@ -49,7 +52,7 @@ export default class ClientForm extends Component {
                         />
                     </div>
                     <div className="form-grup">
-                        <labe htmlFor="address">Client Address</labe>
+                        <labe htmlFor="address">Client Address: </labe>
                         <input
                             type="text"
                             required
@@ -60,7 +63,7 @@ export default class ClientForm extends Component {
                         />
                     </div>
                     <div className="form-grup">
-                        <labe htmlFor="phoneNumber">Client Phone Number</labe>
+                        <labe htmlFor="phoneNumber">Client Phone Number: </labe>
                         <input
                             type="text"
                             required
@@ -71,7 +74,7 @@ export default class ClientForm extends Component {
                         />
                     </div>
                     <div className="form-grup">
-                        <labe htmlFor="service">Client Service</labe>
+                        <labe htmlFor="service">Client Service: </labe>
                         <input
                             type="text"
                             required
@@ -82,14 +85,14 @@ export default class ClientForm extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="day">Assign a Day</label>
+                        <label htmlFor="day">Assign a Day: </label>
                         <select
                             defaultValue=""
                             name="day"
                             id="dayId"
                             onChange={this.handleFieldChange}
                         >
-                            <option value="">Select a Day</option>
+                            <option value="">Select a Day: </option>
                             {this.props.days.map(day => (
                                 <option key={day.id} id={day.id} value={day.id}>
                                     {day.name}

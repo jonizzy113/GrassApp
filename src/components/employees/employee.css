@@ -2,3 +2,14 @@
     display: flex;
     justify-content: center
 }
+.employees {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+} 
+.employeeForm {
+    color: white
+}
+.employee {
+    background-color: rgba(242, 242, 242, .7);
+}
