@@ -17,7 +17,7 @@ import {withRouter} from "react-router"
 
 class ApplicationViews extends Component {
     // isAuthenticated checks to see if there is employeeId in session storage
-    isAuthenticated = () => sessionStorage.getItem("employeeId") !== null
+    isAuthenticated = () => sessionStorage.getItem("userId") !== null
         // setting state
     state = {
         employees: [],

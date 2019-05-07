@@ -10,9 +10,9 @@ export default class Login extends Component {
         password: ""
     }
         //  handleFieldChange update state when the input field is editied
-    handleFieldChange = (evt) => {
+    handleFieldChange = (event) => {
         const stateToChange = {}
-        stateToChange[evt.target.id] = evt.target.value
+        stateToChange[event.target.id] = event.target.value
         this.setState(stateToChange)
     }
 
@@ -27,21 +27,23 @@ export default class Login extends Component {
             this.state.userName.toLowerCase() && element.password.toLowerCase() ===
             this.state.password.toLowerCase())
             if (tempUserName) {
-                sessionStorage.setItem("employeeId", tempUserName.id)
+                sessionStorage.setItem("userId", tempUserName.id)
                 this.props.onLogin()
                 this.props.history.push("/clients") 
             } else {
                 window.alert("Not Found!")
-        }}).then(() => this.props.userData())
+        }})
 
     }
         // renders the login form 
     render() {
         return (
             <React.Fragment>
+            <div className="div">
             <h2 className="content welcome">Welcome to GrassApp</h2>
             <form onSubmit={this.handleLogin} className="content">
                 <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <div className="form-group">
                 <label htmlFor="userName">
                     User Name
                 </label>
@@ -49,18 +51,22 @@ export default class Login extends Component {
                     id="userName"
                     placeholder="user Name"
                     required="" autoFocus="" />
+                    </div>
+                <div className="form-group">
                 <label htmlFor="password">
-                    password
+                    Password
                 </label>
                 <input onChange={this.handleFieldChange} type="password"
                     id="password"
                     placeholder="password"
                     required="" />
-                <button type="submit"
+                    </div>
+                <button type="submit" className="btn btn-primary"
                 onClick={() => this.handleLogin}>
                     Sign in
                 </button>
             </form>
+            </div>
             </React.Fragment>
         )
     }

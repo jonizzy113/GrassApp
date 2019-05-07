@@ -26,12 +26,14 @@ export default class ScheduleList extends Component {
         let mondayData = this.props.clients.filter(client => client.day.name === "Monday")
         let tuesdayData = this.props.clients.filter(client => client.day.name === "Tuesday")
         let wednesdayData = this.props.clients.filter(client => client.day.name === "Wednesday")
-        let thursdayData = this.props.clients.filter(client => client.day.name === "Thrusday")
+        let thursdayData = this.props.clients.filter(client => client.day.name === "Thursday")
         let fridayData = this.props.clients.filter(client => client.day.name === "Friday")
         
         return (
+            <React.Fragment>
             <article className="article">
-                <section className="card scheduleCard jumbotron text-center">Monday
+                <section className="card scheduleCard jumbotron text-center">
+                <h1 className="display-5">Monday</h1>
                 {
                     mondayData.map(client =>
                         <div key={client.id} className="">
@@ -43,7 +45,8 @@ export default class ScheduleList extends Component {
                 )
                 }
                 </section>
-                <section className="card scheduleCard jumbotron text-center">Tuesday
+                <section className="card scheduleCard jumbotron text-center">
+                <h1 className="display-5">Tuesday</h1>
                 {
                     tuesdayData.map(client =>
                         <div key={client.id} className="tuesdayCard">
@@ -55,7 +58,9 @@ export default class ScheduleList extends Component {
                 )
                 }
                 </section>
-                <section className="card scheduleCard jumbotron text-center">Wednesday
+                <section className="card scheduleCard jumbotron text-center">
+                <h1 className="display-5">Wednesday</h1>
+                
                 {
                     wednesdayData.map(client =>
                         <div key={client.id} className="wednesdayCard">
@@ -67,7 +72,8 @@ export default class ScheduleList extends Component {
                 )
                 }
                 </section>
-                <section className="card scheduleCard jumbotron text-center">Thrusday
+                <section className="card scheduleCard jumbotron text-center">
+                <h1 className="display-5">Thrusday</h1>
                 {
                     thursdayData.map(client =>
                         <div key={client.id} className="thrusdayCard">
@@ -79,7 +85,8 @@ export default class ScheduleList extends Component {
                 )
                 }
                 </section>
-                <section className="card scheduleCard jumbotron text-center">Friday
+                <section className="card scheduleCard jumbotron text-center">
+                <h1 className="display-5">Friday</h1>
                 {
                     fridayData.map(client =>
                         <div key={client.id} className="fridayCard">
@@ -92,6 +99,7 @@ export default class ScheduleList extends Component {
                 }
                 </section>
             </article>
+            </React.Fragment>
         )
     }
 }
