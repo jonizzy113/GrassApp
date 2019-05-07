@@ -48,7 +48,7 @@
     },
     {
       "id": 4,
-      "name": "Thrusday"
+      "name": "Thursday"
     },
     {
       "id": 5,
@@ -56,14 +56,6 @@
     }
   ],
   "clients": [
-    {
-      "id": 1,
-      "name": "Jon Smith",
-      "address": "4997 Chenoweth Drive",
-      "phoneNumber": "615-278-2763",
-      "service": "Lawn Service",
-      "dayId": 1
-    },
     {
       "id": 3,
       "name": "Jameka Echols",
@@ -86,7 +78,7 @@
       "address": "3135 Green Street",
       "phoneNumber": "615-365-3499",
       "service": "Planting shrubs",
-      "dayId": 3
+      "dayId": 4
     },
     {
       "id": 6,
@@ -94,7 +86,7 @@
       "address": "319 Wilkinson Street",
       "phoneNumber": "615-039-3933",
       "service": "Lawn Service",
-      "dayId": 4
+      "dayId": 5
     },
     {
       "id": 7,
@@ -183,6 +175,103 @@
       "phoneNumber": "615-739-9172",
       "service": "Mowing the lawn",
       "dayId": 1
+    }
+  ],
+  "employeeDays": [
+    {
+      "id":1,
+      "employeeId": 1,
+      "dayId":1
+    },
+    {
+      "id":1,
+      "employeeId": 1,
+      "dayId":2
+    },
+    {
+      "id":1,
+      "employeeId": 1,
+      "dayId":3
+    },
+    {
+      "id":1,
+      "employeeId": 1,
+      "dayId":4
+    },
+    {
+      "id":1,
+      "employeeId": 1,
+      "dayId":5
+    },
+    {
+      "id":1,
+      "employeeId": 2,
+      "dayId":1
+    },
+    {
+      "id":1,
+      "employeeId": 2,
+      "dayId":2
+    },
+    {
+      "id":1,
+      "employeeId": 2,
+      "dayId":3
+    },
+    {
+      "id":1,
+      "employeeId": 2,
+      "dayId":4
+    },
+    {
+      "id":1,
+      "employeeId": 2,
+      "dayId":5
+    },
+    {
+      "id":1,
+      "employeeId": 3,
+      "dayId":1
+    },
+    {
+      "id":1,
+      "employeeId": 3,
+      "dayId":2
+    },
+    {
+      "id":1,
+      "employeeId": 3,
+      "dayId":3
+    },
+    {
+      "id":1,
+      "employeeId": 3,
+      "dayId":4
+    },
+    {
+      "id":1,
+      "employeeId": 3,
+      "dayId":5
+    },
+    {
+      "id":1,
+      "employeeId": 4,
+      "dayId":1
+    },
+    {
+      "id":1,
+      "employeeId": 4,
+      "dayId":2
+    },
+    {
+      "id":1,
+      "employeeId": 4,
+      "dayId":3
+    },
+    {
+      "id":1,
+      "employeeId": 4,
+      "dayId":4
     }
   ]
 }

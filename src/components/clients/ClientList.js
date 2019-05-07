@@ -37,6 +37,7 @@ export default class ClientList extends Component {
                                             onClick={() => {
                                                 this.props.history.push(`/clients/${client.id}/edit`)
                                             }}
+                                            
                                             className="card-link btn btn-info">Edit</button>
                                 </div>
                             </div>
