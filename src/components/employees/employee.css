@@ -13,3 +13,7 @@
 .employee {
     background-color: rgba(242, 242, 242, .7);
 }
+.dayList{
+    display: flex;
+    justify-content: flex-start
+}

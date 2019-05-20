@@ -20,6 +20,9 @@ export default class NavBar extends Component {
                     <li className="nav-item">
                         <Link className="nav-link" to="/schedule">Schedule</Link>
                     </li>
+                    {/* <li className="nav-item">
+                        <Link className="nav-link" to="/employeeDay">Employee Schedule</Link>
+                    </li> */}
                     <li className="nav-item">
                         <Link 
                         onClick={() => sessionStorage.clear()} className="nav-link" to="/">

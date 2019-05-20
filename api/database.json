@@ -3,8 +3,7 @@
     {
       "id": 1,
       "userName": "Jonathan",
-      "password": "jon",
-      "employeeId": 1
+      "password": "jon"
     }
   ],
   "employees": [
@@ -22,15 +21,9 @@
     },
     {
       "id": 3,
-      "name": "Clif",
+      "name": "Stephen",
       "address": "2714 Andell Road",
       "phoneNumber": "615-775-4155"
-    },
-    {
-      "id": 4,
-      "name": "Sam",
-      "address": "1847 Frum Street",
-      "phoneNumber": "615-463-4207"
     }
   ],
   "days": [
@@ -174,104 +167,80 @@
       "address": "500 Interstate Blvd S",
       "phoneNumber": "615-739-9172",
       "service": "Mowing the lawn",
+      "dayId": 3
+    },
+    {
+      "name": "Bob Smith",
+      "address": "203 Trail rd",
+      "phoneNumber": "515-302-3992",
+      "service": "Lawn Service",
+      "dayId": 3,
+      "id": 18
+    },
+    {
+      "id": 19,
+      "name": "Jim Smith",
+      "address": "123 Hello Rd",
+      "phoneNumber": "615-823-8287",
+      "service": "mowing the lawn",
       "dayId": 1
     }
   ],
   "employeeDays": [
     {
-      "id":1,
+      "id": 1,
       "employeeId": 1,
-      "dayId":1
+      "dayId": 1
     },
     {
-      "id":1,
+      "id": 2,
       "employeeId": 1,
-      "dayId":2
+      "dayId": 2
     },
     {
-      "id":1,
+      "id": 3,
       "employeeId": 1,
-      "dayId":3
+      "dayId": 3
     },
     {
-      "id":1,
-      "employeeId": 1,
-      "dayId":4
-    },
-    {
-      "id":1,
-      "employeeId": 1,
-      "dayId":5
-    },
-    {
-      "id":1,
+      "id": 8,
       "employeeId": 2,
-      "dayId":1
+      "dayId": 3
     },
     {
-      "id":1,
+      "id": 9,
       "employeeId": 2,
-      "dayId":2
+      "dayId": 4
     },
     {
-      "id":1,
+      "id": 10,
       "employeeId": 2,
-      "dayId":3
+      "dayId": 5
     },
     {
-      "id":1,
-      "employeeId": 2,
-      "dayId":4
-    },
-    {
-      "id":1,
-      "employeeId": 2,
-      "dayId":5
-    },
-    {
-      "id":1,
+      "id": 11,
       "employeeId": 3,
-      "dayId":1
+      "dayId": 1
     },
     {
-      "id":1,
+      "id": 12,
       "employeeId": 3,
-      "dayId":2
+      "dayId": 2
     },
     {
-      "id":1,
+      "id": 13,
       "employeeId": 3,
-      "dayId":3
+      "dayId": 3
     },
     {
-      "id":1,
+      "id": 14,
       "employeeId": 3,
-      "dayId":4
+      "dayId": 4
     },
     {
-      "id":1,
+      "id": 15,
       "employeeId": 3,
-      "dayId":5
-    },
-    {
-      "id":1,
-      "employeeId": 4,
-      "dayId":1
-    },
-    {
-      "id":1,
-      "employeeId": 4,
-      "dayId":2
-    },
-    {
-      "id":1,
-      "employeeId": 4,
-      "dayId":3
-    },
-    {
-      "id":1,
-      "employeeId": 4,
-      "dayId":4
+      "dayId": 5
     }
   ]
 }
