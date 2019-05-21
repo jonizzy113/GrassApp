@@ -4,6 +4,9 @@ export default {
     get(id) {
         return fetch(`${remoteURL}/employeeDays/${id}`).then(e => e.json())
     },
+    getDay(employeeId) {
+        return fetch(`${remoteURL}/employeeDays?employeeId=${employeeId}&&_expand=day`).then(e => e.json())
+    },
     getAll() {
         return fetch(`${remoteURL}/employeeDays?_expand=employee&&_expand=day`).then(e => e.json())
     },

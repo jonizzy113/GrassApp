@@ -75,7 +75,7 @@
     },
     {
       "id": 6,
-      "name": "Josh Hilbary",
+      "name": "Josh Hibary",
       "address": "319 Wilkinson Street",
       "phoneNumber": "615-039-3933",
       "service": "Lawn Service",
@@ -96,14 +96,6 @@
       "phoneNumber": "615-264-9394",
       "service": "Mowing the lawn",
       "dayId": 2
-    },
-    {
-      "id": 9,
-      "name": "Sam Alpren",
-      "address": "1079 Frum Street",
-      "phoneNumber": "615-726-2872",
-      "service": "Mowing the lawn",
-      "dayId": 3
     },
     {
       "id": 10,
