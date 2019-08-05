@@ -36,8 +36,7 @@ json-server -p 5002 -w database.json
 
 
 ## First Time User instructions
-* The first thing you have to do is register as new user otherwise you will not be able to use GrassApp
-* Once registered, you are now able to use the application
+* First Login with the username of jonathan and a password of jon that will get you logged in
 * Now you can create some clients add in their information as well as what service they want and the day of the week
 * You can do the same with Employees add their information and when they are available to work
 * As you populate Employees and Clients you will see your schedule grow with information
