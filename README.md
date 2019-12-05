@@ -54,6 +54,7 @@ json-server -p 5002 -w database.json
 
 
 ## Authors
+## Nice guy
 
 * **Jonathan Schaffer** 
 
